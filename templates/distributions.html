@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Feature Distributions{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Feature Distributions</h1>
+    <p class="text-center text-muted">Compare the distribution of key features for patients with and without heart disease.</p>
+    <div class="row">
+        {% for plot_html in histogram_htmls %}
+        <div class="col-md-6 mb-4">
+            <div class="card shadow-lg p-4">
+                {{ plot_html | safe }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
